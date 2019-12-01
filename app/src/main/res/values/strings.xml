@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SprintAPP</string>
+    <string name="day_is_not_available">Dzień niedostępny</string>
+    <string name="diagnostics">Diagnostyka</string>
+    <string name="annual_inspection">Przegląd</string>
+    <string name="oil_change">Zmiana oleju</string>
+</resources>

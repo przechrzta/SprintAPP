@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "636926823352",
+    "firebase_url": "https://sprintapp-be6e2.firebaseio.com",
+    "project_id": "sprintapp-be6e2",
+    "storage_bucket": "sprintapp-be6e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636926823352:android:ddba0e2dacb095c76d9d4d",
+        "android_client_info": {
+          "package_name": "com.example.sprintapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636926823352-6jtoc6jfl1ugf3qopk408f7auqqpenik.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8dpm0_YQ8LViP56mUDCxta5T8MtWBFfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636926823352-6jtoc6jfl1ugf3qopk408f7auqqpenik.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
