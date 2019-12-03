@@ -3,17 +3,25 @@ package com.example.sprintapp.owner;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sprintapp.R;
 import com.example.sprintapp.shared.Event;
 import com.example.sprintapp.shared.EventListAdapter;
-import com.example.sprintapp.shared.EventType;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class EventListActivity extends AppCompatActivity {
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
     @Override
@@ -25,15 +33,30 @@ public class EventListActivity extends AppCompatActivity {
         final String date = incomingIntent.getStringExtra("date");
         setTitle(date);
 
-        ArrayList<Event> events = new ArrayList<>();
+        getEventsForDate(date);
+    }
 
-        events.add(new Event("Tomek cfel", "123123123", new EventType(1, "Diagnostyka")));
-        events.add(new Event("Adam cfel", "222222222", new EventType(2, "Wymiana oleju")));
+    private void getEventsForDate(String date) {
+        db.collection("dates").document(date).collection("events").addSnapshotListener(new EventListener<QuerySnapshot>() {
 
-        EventListAdapter simpleAdapter = new EventListAdapter(events);
+            @Override
+            public void onEvent(@Nullable QuerySnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                List<Event> events = null;
+                if (documentSnapshot != null) {
+                    events = documentSnapshot.toObjects(Event.class);
+                }
 
-        RecyclerView listView = findViewById(R.id.eventListView);
-        listView.setAdapter(simpleAdapter);
+                if (events == null) {
+                    events = new ArrayList<>();
+                }
+
+                EventListAdapter simpleAdapter = new EventListAdapter(events);
+
+                RecyclerView listView = findViewById(R.id.eventListView);
+                listView.setAdapter(simpleAdapter);
+            }
+
+        });
     }
 
 }
