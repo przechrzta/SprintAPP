@@ -27,12 +27,12 @@ public class EventListActivity extends AppCompatActivity {
 
         ArrayList<Event> events = new ArrayList<>();
 
-        events.add(new Event("Tomek cfel", "1231231123", EventType.DIAGNOSTICS));
-        events.add(new Event("Adam cfel", "22222222", EventType.OIL_CHANGE));
+        events.add(new Event("Tomek cfel", "1231231123", new EventType(1, "Diagnostyka")));
+        events.add(new Event("Adam cfel", "22222222", new EventType(2, "Wymiana oleju")));
 
         EventListAdapter simpleAdapter = new EventListAdapter(events);
 
-        RecyclerView listView = findViewById(R.id.listView);
+        RecyclerView listView = findViewById(R.id.eventListView);
         listView.setAdapter(simpleAdapter);
     }
 

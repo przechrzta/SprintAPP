@@ -1,23 +1,23 @@
 package com.example.sprintapp.shared;
 
-import com.example.sprintapp.R;
+
+public class EventType {
+
+    private final int id;
+    private final String name;
 
 
-public enum EventType {
-
-    DIAGNOSTICS(R.string.diagnostics),
-    ANNUAL_SAFETY_INSPECTION(R.string.annual_inspection),
-    OIL_CHANGE(R.string.oil_change);
-
-
-    private final int messageId;
-
-    EventType(int messageId) {
-        this.messageId = messageId;
+    public EventType(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public int getMessageId() {
-        return messageId;
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
 }
