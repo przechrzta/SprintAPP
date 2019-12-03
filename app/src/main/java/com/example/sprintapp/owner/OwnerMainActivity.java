@@ -8,8 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sprintapp.R;
+import com.example.sprintapp.shared.DateHelper;
 
-public class OwnerMainActivity extends AppCompatActivity {
+public class OwnerMainActivity extends AppCompatActivity implements CalendarView.OnDateChangeListener {
 
 
     @Override
@@ -17,21 +18,16 @@ public class OwnerMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.owner_main_activity);
 
-        initializeCalendar();
+        CalendarView calendar = findViewById(R.id.simpleCalendarView);
+        calendar.setOnDateChangeListener(this);
     }
 
-    private void initializeCalendar() {
-        CalendarView calendar = findViewById(R.id.simpleCalendarView);
-
-        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int day) {
-                String date = year + "-" + (month + 1) + "-" + day;
-                Intent intent = new Intent(getApplicationContext(), EventListActivity.class);
-                intent.putExtra("date", date);
-                startActivity(intent);
-            }
-        });
+    @Override
+    public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+        String date = DateHelper.format(year, month, dayOfMonth);
+        Intent intent = new Intent(getApplicationContext(), EventListActivity.class);
+        intent.putExtra("date", date);
+        startActivity(intent);
     }
 
 }
