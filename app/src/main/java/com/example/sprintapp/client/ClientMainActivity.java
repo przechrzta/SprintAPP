@@ -26,7 +26,7 @@ public class ClientMainActivity extends AppCompatActivity {
                 Date date = new Date(year, month, day);
                 if (checkIfDateIsAvailable(date)) {
 //                    finish();
-//                    Intent intent = new Intent(TasksActivity.this, NotesActivity.class);
+//                    Intent intent = new Intent(TasksActivity.this, EventListActivity.class);
 //                    intent.putExtra("date", date);
 //                    startActivity(intent);
                 } else {

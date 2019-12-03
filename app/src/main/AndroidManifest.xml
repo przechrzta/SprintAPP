@@ -25,7 +25,7 @@
 
         <activity android:name=".owner.OwnerMainActivity" />
 
-        <activity android:name=".owner.NotesActivity" />
+        <activity android:name=".owner.EventListActivity" />
 
         <activity android:name=".shared.DatabaseHelper" />
 
