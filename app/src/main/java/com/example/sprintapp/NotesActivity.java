@@ -38,7 +38,7 @@ public class NotesActivity extends AppCompatActivity {
         RecyclerView listView = findViewById(R.id.listView);
         listView.setAdapter(simpleAdapter);
 
-        theDate = findViewById(R.id.date);
+//        theDate = findViewById(R.id.date);
 //        btnGoToTasks = (Button) findViewById(R.id.btnGoToTasks);
 //        btnAddTask = (Button) findViewById(R.id.btnAddTask);
 
