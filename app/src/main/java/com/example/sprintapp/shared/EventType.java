@@ -1,7 +1,9 @@
-package com.example.sprintapp;
+package com.example.sprintapp.shared;
+
+import com.example.sprintapp.R;
 
 
-enum EventType {
+public enum EventType {
 
     DIAGNOSTICS(R.string.diagnostics),
     ANNUAL_SAFETY_INSPECTION(R.string.annual_inspection),
@@ -19,5 +21,3 @@ enum EventType {
     }
 
 }
-
-//asd

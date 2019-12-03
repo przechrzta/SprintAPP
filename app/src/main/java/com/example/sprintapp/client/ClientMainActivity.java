@@ -1,10 +1,12 @@
-package com.example.sprintapp;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.sprintapp.client;
 
 import android.os.Bundle;
 import android.widget.CalendarView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.sprintapp.R;
 
 import java.util.Date;
 

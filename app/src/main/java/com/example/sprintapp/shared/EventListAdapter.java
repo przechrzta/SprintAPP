@@ -1,13 +1,13 @@
-package com.example.sprintapp;
+package com.example.sprintapp.shared;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.example.sprintapp.R;
+
 import java.util.List;
 
 public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.MyViewHolder> {

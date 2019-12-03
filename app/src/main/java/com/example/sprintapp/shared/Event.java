@@ -1,4 +1,4 @@
-package com.example.sprintapp;
+package com.example.sprintapp.shared;
 
 public class Event {
 

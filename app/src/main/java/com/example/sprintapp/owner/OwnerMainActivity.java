@@ -1,17 +1,12 @@
-package com.example.sprintapp;
+package com.example.sprintapp.owner;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.CalendarView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.ViewGroup;
-import android.widget.CalendarView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.Date;
+import com.example.sprintapp.R;
 
 public class OwnerMainActivity extends AppCompatActivity {
 
