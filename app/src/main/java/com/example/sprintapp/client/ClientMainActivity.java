@@ -1,34 +1,31 @@
 package com.example.sprintapp.client;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sprintapp.R;
-import com.example.sprintapp.owner.EventListActivity;
 import com.example.sprintapp.shared.DateHelper;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
+import com.example.sprintapp.shared.Event;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.SetOptions;
-import com.google.type.Date;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 
 public class ClientMainActivity extends AppCompatActivity implements CalendarView.OnDateChangeListener {
 
     // Access a Cloud Firestore instance from your Activity
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    CollectionReference dates = db.collection("dates");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,51 +38,40 @@ public class ClientMainActivity extends AppCompatActivity implements CalendarVie
 
     @Override
     public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-        String date = DateHelper.format(year, month, dayOfMonth);
-        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-        intent.putExtra("date", date);
-        startActivity(intent);
+        Date date = DateHelper.createDate(year, month, dayOfMonth);
+        checkIfDateIsAvailable(date);
     }
 
-//    @Override
-//    public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-//        String date = DateHelper.format(year, month, dayOfMonth);
-//        if (checkIfDateIsAvailable(date){
-//                    finish();
-//                    Intent intent = new Intent(TasksActivity.this, EventListActivity.class);
-//                    intent.putExtra("date", date);
-//                    startActivity(intent);
-//        } else {
-//            showMessage(R.string.day_is_not_available);
-//        }
-//    }
+    private void checkIfDateIsAvailable(final Date date) {
+        String stringDate = DateHelper.format(date);
 
-    private boolean checkIfDateIsAvailable(String date) {
-        return false;
+        db.collection("dates").document(stringDate).collection("events").addSnapshotListener(new EventListener<QuerySnapshot>() {
+
+            @Override
+            public void onEvent(@Nullable QuerySnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                List<Event> events = null;
+                if (documentSnapshot != null) {
+                    events = documentSnapshot.toObjects(Event.class);
+                }
+
+                if (events == null) {
+                    events = new ArrayList<>();
+                }
+
+                if (events.size() < 7) {
+                    showMessage(R.string.day_is_available);
+                } else {
+                    showMessage(R.string.day_is_not_available);
+                }
+            }
+
+        });
+
     }
 
     private void showMessage(int messageId) {
         Toast.makeText(this, messageId, Toast.LENGTH_SHORT).show();
     }
 
-
-//    private void getDate() {
-//
-//        db.collection("dates").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                if (task.isSuccessful()) {
-//                    DocumentSnapshot document = task.getResult();
-//                    if (document.exists()) {
-//                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-//                    } else {
-//                        Log.d(TAG, "No such document");
-//                    }
-//                } else {
-//                    Log.d(TAG, "get failed with ", task.getException());
-//                }
-//            }
-//        });
-//    }
 }
 

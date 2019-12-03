@@ -3,9 +3,14 @@ package com.example.sprintapp.shared;
 
 public class EventType {
 
-    private final int id;
-    private final String name;
+    private int id;
+    private String name;
 
+
+    @SuppressWarnings("unused")
+    public EventType() {
+        // for serialization
+    }
 
     public EventType(int id, String name) {
         this.id = id;

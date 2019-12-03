@@ -7,6 +7,12 @@ public class Event {
 
     private EventType eventType;
 
+
+    @SuppressWarnings("unused")
+    public Event() {
+        // for serialization
+    }
+
     public Event(String clientName, String phoneNumber, EventType eventType) {
         this.clientName = clientName;
         this.phoneNumber = phoneNumber;

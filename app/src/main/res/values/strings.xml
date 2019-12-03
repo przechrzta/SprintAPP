@@ -4,6 +4,7 @@
     <string name="diagnostics">Diagnostyka</string>
     <string name="annual_inspection">Przegląd</string>
     <string name="oil_change">Zmiana oleju</string>
+    <string name="day_is_available">Dzień dostępny</string>
 </resources>
 
 
