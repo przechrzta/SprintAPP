@@ -1,8 +1,6 @@
 package com.example.sprintapp.owner;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,19 +14,18 @@ import java.util.ArrayList;
 
 public class NotesActivity extends AppCompatActivity {
 
-    private TextView theDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
 
-        ArrayList<Event> itemDataList = new ArrayList<>();
+        ArrayList<Event> events = new ArrayList<>();
 
-        itemDataList.add(new Event("Tomek cfel", "1231231123", EventType.DIAGNOSTICS));
-        itemDataList.add(new Event("Adam cfel", "22222222", EventType.OIL_CHANGE));
+        events.add(new Event("Tomek cfel", "1231231123", EventType.DIAGNOSTICS));
+        events.add(new Event("Adam cfel", "22222222", EventType.OIL_CHANGE));
 
-        EventListAdapter simpleAdapter = new EventListAdapter(itemDataList);
+        EventListAdapter simpleAdapter = new EventListAdapter(events);
 
         RecyclerView listView = findViewById(R.id.listView);
         listView.setAdapter(simpleAdapter);
@@ -37,9 +34,9 @@ public class NotesActivity extends AppCompatActivity {
 //        btnGoToTasks = (Button) findViewById(R.id.btnGoToTasks);
 //        btnAddTask = (Button) findViewById(R.id.btnAddTask);
 
-        Intent incomingIntent = getIntent();
-        final String date = incomingIntent.getStringExtra("date");
-        theDate.setText(date);
+//        Intent incomingIntent = getIntent();
+//        final String date = incomingIntent.getStringExtra("date");
+//        theDate.setText(date);
 //
 //        btnGoToTasks.setOnClickListener(new View.OnClickListener(){
 //            @Override
