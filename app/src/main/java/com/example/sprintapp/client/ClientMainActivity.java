@@ -1,6 +1,8 @@
 package com.example.sprintapp.client;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
@@ -58,8 +60,11 @@ public class ClientMainActivity extends AppCompatActivity implements CalendarVie
                     events = new ArrayList<>();
                 }
 
-                if (events.size() < 7) {
-                    showMessage(R.string.day_is_available);
+                if (events.size() <= 8) {
+
+                   // showMessage(R.string.day_is_available);
+                    Intent RegisterActivity = new Intent(getApplicationContext(), RegisterActivity.class);
+                    startActivity(RegisterActivity);
                 } else {
                     showMessage(R.string.day_is_not_available);
                 }

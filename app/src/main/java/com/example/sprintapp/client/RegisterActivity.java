@@ -57,14 +57,30 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText phoneNumberField = (EditText) findViewById(R.id.phoneNumber);
         String phoneNumber = phoneNumberField.getText().toString();
 
-        Map<String, Object> client = new HashMap<>();
-        client.put("Name",name);
-        client.put("LastName", lastName);
-        client.put("phoneNumber", phoneNumber);
+        final EditText additionalInfoField = (EditText) findViewById(R.id.additional_info);
+        String additionalInfo = additionalInfoField.getText().toString();
+
+        final EditText modelField = (EditText) findViewById(R.id.car_model);
+        String carModel = modelField.getText().toString();
+
+        final EditText yearOfProdField = (EditText) findViewById(R.id.production_year);
+        String yearOfProd = yearOfProdField.getText().toString();
+
+        final EditText registrationNumberField = (EditText) findViewById(R.id.registration_number);
+        String registrationNumber = registrationNumberField.getText().toString();
+
+        Map<String, Object> event = new HashMap<>();
+        event.put("Name",name);
+        event.put("LastName", lastName);
+        event.put("phoneNumber", phoneNumber);
+        event.put("AdditionalInfo", additionalInfo);
+        event.put("model", carModel);
+        event.put("year", yearOfProd);
+        event.put("registrationNumber", registrationNumber);
 
 
-        db.collection("forms").document(phoneNumber)
-                .set(client)
+        db.collection("dates").document("2019-12-04").collection("events").document()
+                .set(event)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
