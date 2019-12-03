@@ -1,5 +1,6 @@
 package com.example.sprintapp.client;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.CalendarView;
@@ -9,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sprintapp.R;
+import com.example.sprintapp.owner.EventListActivity;
 import com.example.sprintapp.shared.DateHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -40,15 +42,23 @@ public class ClientMainActivity extends AppCompatActivity implements CalendarVie
     @Override
     public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
         String date = DateHelper.format(year, month, dayOfMonth);
-        if (checkIfDateIsAvailable(date){
+        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+        intent.putExtra("date", date);
+        startActivity(intent);
+    }
+
+//    @Override
+//    public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+//        String date = DateHelper.format(year, month, dayOfMonth);
+//        if (checkIfDateIsAvailable(date){
 //                    finish();
 //                    Intent intent = new Intent(TasksActivity.this, EventListActivity.class);
 //                    intent.putExtra("date", date);
 //                    startActivity(intent);
-        } else {
-            showMessage(R.string.day_is_not_available);
-        }
-    }
+//        } else {
+//            showMessage(R.string.day_is_not_available);
+//        }
+//    }
 
     private boolean checkIfDateIsAvailable(String date) {
         return false;
