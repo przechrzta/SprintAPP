@@ -27,8 +27,8 @@ public class EventListActivity extends AppCompatActivity {
 
         ArrayList<Event> events = new ArrayList<>();
 
-        events.add(new Event("Tomek cfel", "1231231123", new EventType(1, "Diagnostyka")));
-        events.add(new Event("Adam cfel", "22222222", new EventType(2, "Wymiana oleju")));
+        events.add(new Event("Tomek cfel", "123123123", new EventType(1, "Diagnostyka")));
+        events.add(new Event("Adam cfel", "222222222", new EventType(2, "Wymiana oleju")));
 
         EventListAdapter simpleAdapter = new EventListAdapter(events);
 
