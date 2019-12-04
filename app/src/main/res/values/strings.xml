@@ -6,6 +6,7 @@
     <string name="oil_change">Zmiana oleju</string>
     <string name="day_is_available">Dzień dostępny</string>
     <string name="something_went_wrong">Something went wrong ;(</string>
+    <string name="select_day">Select day for details</string>
 
     <string-array name="event_types">
         <item>Mercury</item>
