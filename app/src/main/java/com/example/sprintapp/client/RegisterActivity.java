@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        final Spinner maintenanceSpinner = findViewById(R.id.maintenance);
+        final Spinner maintenanceSpinner = findViewById(R.id.eventType);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.event_types,
@@ -53,42 +53,37 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void register(String date) {
-        final EditText nameField = findViewById(R.id.Name);
-        String name = nameField.getText().toString();
-
-        final EditText lastNameField = findViewById(R.id.lastName);
-        String lastName = lastNameField.getText().toString();
+        final EditText clientNameField = findViewById(R.id.clientName);
+        String clientName = clientNameField.getText().toString();
 
         final EditText phoneNumberField = findViewById(R.id.phoneNumber);
         String phoneNumber = phoneNumberField.getText().toString();
 
-        final EditText additionalInfoField = findViewById(R.id.additional_info);
+        final EditText additionalInfoField = findViewById(R.id.additionalInfo);
         String additionalInfo = additionalInfoField.getText().toString();
 
-        final EditText modelField = findViewById(R.id.car_model);
-        String carModel = modelField.getText().toString();
+        final EditText carModelField = findViewById(R.id.carModel);
+        String carModel = carModelField.getText().toString();
 
-        final EditText yearOfProdField = findViewById(R.id.production_year);
-        String yearOfProd = yearOfProdField.getText().toString();
+        final EditText carProductionYearField = findViewById(R.id.carProductionYear);
+        String carProductionYear = carProductionYearField.getText().toString();
 
-        final EditText registrationNumberField = findViewById(R.id.registration_number);
-        String registrationNumber = registrationNumberField.getText().toString();
+        final EditText carRegistrationNumberField = findViewById(R.id.carRegistrationNumber);
+        String carRegistrationNumber = carRegistrationNumberField.getText().toString();
 
-        final Spinner maintenanceSpinner = findViewById(R.id.maintenance);
-        TextView textView = (TextView) maintenanceSpinner.getSelectedView();
-        String maintenanceType = textView.getText().toString();
+        final Spinner eventTypeField = findViewById(R.id.eventType);
+        TextView textView = (TextView) eventTypeField.getSelectedView();
+        String eventType = textView.getText().toString();
 
 
         Map<String, Object> event = new HashMap<>();
-        event.put("Name",name);
-        event.put("LastName", lastName);
+        event.put("clientName", clientName);
         event.put("phoneNumber", phoneNumber);
-        event.put("AdditionalInfo", additionalInfo);
-        event.put("model", carModel);
-        event.put("year", yearOfProd);
-        event.put("registrationNumber", registrationNumber);
-        event.put("eventType", maintenanceType);
-
+        event.put("additionalInfo", additionalInfo);
+        event.put("carModel", carModel);
+        event.put("carProductionYear", carProductionYear);
+        event.put("carRegistrationNumber", carRegistrationNumber);
+        event.put("eventType", eventType);
 
         db.collection("dates").document(date).collection("events").document()
                 .set(event)

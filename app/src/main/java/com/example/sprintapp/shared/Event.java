@@ -4,8 +4,11 @@ public class Event {
 
     private String clientName;
     private String phoneNumber;
-
-    private EventType eventType;
+    private String additionalInfo;
+    private String carModel;
+    private String carProductionYear;
+    private String carRegistrationNumber;
+    private String eventType;
 
 
     @SuppressWarnings("unused")
@@ -13,9 +16,13 @@ public class Event {
         // for serialization
     }
 
-    public Event(String clientName, String phoneNumber, EventType eventType) {
+    public Event(String clientName, String phoneNumber, String additionalInfo, String carModel, String carProductionYear, String carRegistrationNumber, String eventType) {
         this.clientName = clientName;
         this.phoneNumber = phoneNumber;
+        this.additionalInfo = additionalInfo;
+        this.carModel = carModel;
+        this.carProductionYear = carProductionYear;
+        this.carRegistrationNumber = carRegistrationNumber;
         this.eventType = eventType;
     }
 
@@ -27,7 +34,23 @@ public class Event {
         return phoneNumber;
     }
 
-    public EventType getEventType() {
+    public String getAdditionalInfo() {
+        return additionalInfo;
+    }
+
+    public String getCarModel() {
+        return carModel;
+    }
+
+    public String getCarProductionYear() {
+        return carProductionYear;
+    }
+
+    public String getCarRegistrationNumber() {
+        return carRegistrationNumber;
+    }
+
+    public String getEventType() {
         return eventType;
     }
 

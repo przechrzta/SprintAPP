@@ -36,7 +36,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
 
         holder.clientNameTextView.setText(event.getClientName());
         holder.clientPhoneNumberTextView.setText(event.getPhoneNumber());
-        holder.eventTypeTextView.setText(event.getEventType().getName());
+        holder.eventTypeTextView.setText(event.getEventType());
     }
 
     @Override
