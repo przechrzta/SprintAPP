@@ -5,6 +5,18 @@
     <string name="annual_inspection">Przegląd</string>
     <string name="oil_change">Zmiana oleju</string>
     <string name="day_is_available">Dzień dostępny</string>
+
+    <string-array name="event_types">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+
 </resources>
 
 

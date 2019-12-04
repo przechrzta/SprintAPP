@@ -2,7 +2,6 @@ package com.example.sprintapp.client;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
@@ -45,7 +44,7 @@ public class ClientMainActivity extends AppCompatActivity implements CalendarVie
     }
 
     private void checkIfDateIsAvailable(final Date date) {
-        String stringDate = DateHelper.format(date);
+        final String stringDate = DateHelper.format(date);
 
         db.collection("dates").document(stringDate).collection("events").addSnapshotListener(new EventListener<QuerySnapshot>() {
 
@@ -61,10 +60,9 @@ public class ClientMainActivity extends AppCompatActivity implements CalendarVie
                 }
 
                 if (events.size() <= 8) {
-
-                   // showMessage(R.string.day_is_available);
-                    Intent RegisterActivity = new Intent(getApplicationContext(), RegisterActivity.class);
-                    startActivity(RegisterActivity);
+                    Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                    intent.putExtra("date", stringDate);
+                    startActivity(intent);
                 } else {
                     showMessage(R.string.day_is_not_available);
                 }
