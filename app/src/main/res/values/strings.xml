@@ -5,6 +5,7 @@
     <string name="annual_inspection">Przegląd</string>
     <string name="oil_change">Zmiana oleju</string>
     <string name="day_is_available">Dzień dostępny</string>
+    <string name="something_went_wrong">Something went wrong ;(</string>
 
     <string-array name="event_types">
         <item>Mercury</item>

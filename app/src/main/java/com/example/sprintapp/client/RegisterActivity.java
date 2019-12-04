@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +39,6 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 register(date);
-                Intent ClientMainActivity = new Intent(getApplicationContext(), ClientMainActivity.class);
-                startActivity(ClientMainActivity);
             }
         });
 
@@ -85,21 +85,27 @@ public class RegisterActivity extends AppCompatActivity {
         event.put("carRegistrationNumber", carRegistrationNumber);
         event.put("eventType", eventType);
 
-        db.collection("dates").document(date).collection("events").document()
+        db.collection("dates").document(date)
+                .collection("events").document()
                 .set(event)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-            }
-        })
-        .addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-            }
-        });
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        finish();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        finish();
+                        showMessage(R.string.something_went_wrong);
+                    }
+                });
 
     }
 
-
+    private void showMessage(int messageId) {
+        Toast.makeText(this, messageId, Toast.LENGTH_SHORT).show();
+    }
 
 }
