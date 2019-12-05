@@ -43,9 +43,6 @@ public class OwnerMainActivity extends AppCompatActivity implements CalendarView
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.calendar:
-                        finish();
-                        Intent intent = new Intent(getApplicationContext(), OwnerMainActivity.class);
-                        startActivity(intent);
                         return true;
 
                     case R.id.today:

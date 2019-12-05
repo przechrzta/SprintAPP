@@ -44,9 +44,8 @@ public class ManageActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.manage:
-                        Intent intent2= new Intent(getApplicationContext(), ManageActivity.class);
-                        startActivity(intent2);
                         return true;
+
                 }
                 return true;
             }

@@ -13,7 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Date;
 
-public class DetailsActivity extends AppCompatActivity {
+public class EventDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

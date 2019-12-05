@@ -22,7 +22,7 @@
 
         <activity android:name=".client.AddCarActivity" />
 
-        <activity android:name=".owner.DetailsActivity" />
+        <activity android:name=".owner.EventDetailsActivity" />
 
         <activity android:name=".client.VisitsActivity" />
 

@@ -1,14 +1,18 @@
 package com.example.sprintapp.shared;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sprintapp.R;
+import com.example.sprintapp.owner.EventDetailsActivity;
 
 import java.util.List;
 
@@ -27,7 +31,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
     public EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.event_list_item, parent, false);
 
-        return new EventViewHolder(v);
+        return new EventViewHolder(v, parent.getContext());
     }
 
     @Override
@@ -50,14 +54,25 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         TextView clientNameTextView;
         TextView clientPhoneNumberTextView;
         TextView eventTypeTextView;
+        LinearLayout clientDetails;
 
 
-        EventViewHolder(View v) {
+        EventViewHolder(View v, final Context context) {
             super(v);
             clientNameTextView = v.findViewById(R.id.clientName);
             clientPhoneNumberTextView = v.findViewById(R.id.clientPhoneNumber);
             eventTypeTextView = v.findViewById(R.id.eventType);
+
+            clientDetails = v.findViewById(R.id.clientDetails);
+            clientDetails.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, EventDetailsActivity.class);
+                    context.startActivity(intent);
+                }
+            });
         }
+
     }
 
 }
