@@ -11,12 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".client.AddCarActivity"></activity>
-        <activity android:name=".owner.DetailsActivity" />
-        <activity android:name=".client.VisitsActivity" />
-        <activity android:name=".client.CarsActivity" />
-        <activity android:name=".owner.ManageActivity" />
-        <activity android:name=".client.RegisterActivity" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,10 +19,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".client.AddCarActivity" />
+
+        <activity android:name=".owner.DetailsActivity" />
+
+        <activity android:name=".client.VisitsActivity" />
+
+        <activity android:name=".client.CarsActivity" />
+
+        <activity android:name=".owner.ManageActivity" />
+
+        <activity android:name=".client.RegisterActivity" />
+
         <activity android:name=".client.ClientMainActivity" />
+
         <activity android:name=".owner.OwnerMainActivity" />
+
         <activity android:name=".owner.EventListActivity" />
+
         <activity android:name=".shared.DatabaseHelper" />
+
     </application>
 
 </manifest>
