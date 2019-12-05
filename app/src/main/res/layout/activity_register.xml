@@ -66,73 +66,90 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:text="Service Type" />
+                android:text="@string/service_type" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <EditText
-                android:id="@+id/additionalInfo"
-                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:hint="Additional informations"
-                android:inputType="textMultiLine"
-                android:isScrollContainer="true"
-                android:text="" />
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/additionalInfo"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:isScrollContainer="true"
+                    android:hint="@string/additional_informations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <EditText
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/carModel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginTop="8dp"
                     android:ems="10"
-                    android:hint="Car model"
                     android:inputType="textPersonName"
-                    android:text="" />
+                    android:hint="@string/car_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-                <EditText
-                    android:id="@+id/carProductionYear"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:hint="Production year"
-                    android:inputType="numberDecimal"
-                    android:text="" />
-
-
-            </LinearLayout>
-
-            <EditText
-                android:id="@+id/carRegistrationNumber"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:hint="Registration number"
-                android:inputType="textPersonName"
-                android:text="" />
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/carProductionYear"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:hint="@string/prod_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/carRegistrationNumber"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="@string/registration_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <Button
                 android:id="@+id/register_button"
-                android:layout_width="150dp"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:text="Register" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/register"
+                android:textColor="@color/white" />
 
         </LinearLayout>
     </ScrollView>

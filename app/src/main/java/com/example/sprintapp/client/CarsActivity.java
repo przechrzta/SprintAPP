@@ -26,6 +26,10 @@ public class CarsActivity extends AppCompatActivity {
 
         onNavBarClick();
 
+        //listView = findViewById(R.id.ListView);
+
+        setTitle("My cars");
+
         Button addCarButton = findViewById(R.id.add_car_button);
         addCarButton.setOnClickListener(new View.OnClickListener() {
             @Override

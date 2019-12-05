@@ -26,6 +26,11 @@
     <string name="phone_number">Phone number</string>
     <string name="maintenance">Maintenance</string>
     <string name="enter_name">Enter name</string>
+    <string name="service_type">Service Type</string>
+    <string name="additional_informations">Additional informations</string>
+    <string name="car_model">Car model</string>
+    <string name="register">REGISTER</string>
+    <string name="brand_and_model">brand and model</string>
 
     <string-array name="event_types">
         <item>Annual Inspection</item>
