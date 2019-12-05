@@ -23,17 +23,18 @@
             android:orientation="vertical"
             android:padding="@dimen/normal_list_padding">
 
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="30dp"
-                android:hint="@string/model">
-
+                android:layout_marginEnd="30dp">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/model"
+                    android:inputType="textPersonName"
+                    android:hint="@string/model"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -45,10 +46,9 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
-                android:hint="@string/brand">
-
+                android:id="@+id/brand">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/brand"
+                    android:hint="@string/brand"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -61,10 +61,9 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
-                android:hint="@string/prod_year">
-
+                android:id="@+id/production_year">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/production_year"
+                    android:hint="@string/prod_year"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -77,10 +76,9 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
-                android:hint="@string/fuel_type">
-
+                android:id="@+id/fuel_type">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fuel_type"
+                    android:hint="@string/fuel_type"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -92,10 +90,9 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
-                android:hint="@string/registration_number">
-
+                android:id="@+id/registration_number">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/registration_number"
+                    android:hint="@string/registration_number"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
