@@ -9,9 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sprintapp.R;
-import com.example.sprintapp.client.RegisterActivity;
 import com.example.sprintapp.shared.DateHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.Date;
 
 public class OwnerMainActivity extends AppCompatActivity implements CalendarView.OnDateChangeListener {
 
@@ -36,7 +37,7 @@ public class OwnerMainActivity extends AppCompatActivity implements CalendarView
     }
 
     protected void onNavBarClick(){
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -49,6 +50,9 @@ public class OwnerMainActivity extends AppCompatActivity implements CalendarView
 
                     case R.id.today:
                         Intent intent1= new Intent(getApplicationContext(), EventListActivity.class);
+                        String date = DateHelper.format(new Date());
+                        intent1.putExtra("date", date);
+
                         startActivity(intent1);
                         return true;
 
