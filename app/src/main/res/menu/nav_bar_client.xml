@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/calendar"
+        android:id="@+id/calendar_client"
         android:enabled="true"
         android:checked="true"
         android:icon="@drawable/baseline_calendar_today_white_48dp"
@@ -12,18 +12,18 @@
         />
 
     <item
-        android:id="@+id/today"
+        android:id="@+id/my_cars"
         android:enabled="true"
-        android:icon="@drawable/baseline_assignment_white_48dp"
-        android:title="@string/today"
+        android:icon="@drawable/baseline_directions_car_white_48dp"
+        android:title="@string/my_cars"
         app:showAsAction="withText"
         />
 
     <item
-        android:id="@+id/manage"
+        android:id="@+id/my_visits"
         android:enabled="true"
-        android:icon="@drawable/baseline_build_white_48dp"
-        android:title="@string/manage"
+        android:icon="@drawable/baseline_book_white_48dp"
+        android:title="@string/my_visits"
         app:showAsAction="withText"
         />
 

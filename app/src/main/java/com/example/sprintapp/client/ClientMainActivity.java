@@ -2,6 +2,7 @@ package com.example.sprintapp.client;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
@@ -10,8 +11,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sprintapp.R;
+import com.example.sprintapp.owner.EventListActivity;
+import com.example.sprintapp.owner.ManageActivity;
+import com.example.sprintapp.owner.OwnerMainActivity;
 import com.example.sprintapp.shared.DateHelper;
 import com.example.sprintapp.shared.Event;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -35,6 +40,8 @@ public class ClientMainActivity extends AppCompatActivity implements CalendarVie
 
         CalendarView calendar = findViewById(R.id.simpleCalendarView);
         calendar.setOnDateChangeListener(this);
+
+        onNavBarClick();
     }
 
     @Override
@@ -76,5 +83,33 @@ public class ClientMainActivity extends AppCompatActivity implements CalendarVie
         Toast.makeText(this, messageId, Toast.LENGTH_SHORT).show();
     }
 
+    protected void onNavBarClick() {
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.calendar_client:
+                        finish();
+                        Intent intent = new Intent(getApplicationContext(), ClientMainActivity.class);
+                        startActivity(intent);
+                        return true;
+
+                    case R.id.my_cars:
+                        Intent intent1 = new Intent(getApplicationContext(), CarsActivity.class);
+                        startActivity(intent1);
+                        return true;
+
+                    case R.id.my_visits:
+                        Intent intent2 = new Intent(getApplicationContext(), VisitsActivity.class);
+                        startActivity(intent2);
+                        return true;
+                }
+                return true;
+            }
+        });
+    }
 }
+
+
 

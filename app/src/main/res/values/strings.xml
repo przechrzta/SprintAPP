@@ -7,6 +7,21 @@
     <string name="day_is_available">Dzień dostępny</string>
     <string name="something_went_wrong">Something went wrong ;(</string>
     <string name="select_day">Select day for details</string>
+    <string name="calendar">Calendar</string>
+    <string name="today">Today</string>
+    <string name="my_visits">My visits</string>
+    <string name="select_day_to_register">Select day to register</string>
+    <string name="manage">Manage</string>
+    <string name="my_cars">My cars</string>
+    <string name="prod_year">Prod. year</string>
+    <string name="model">Model</string>
+    <string name="brand">Brand</string>
+    <string name="fuel_type">Fuel type</string>
+    <string name="vin_number">VIN number</string>
+    <string name="registration_number">Registration number</string>
+    <string name="insurance_policy">Insurance policy</string>
+    <string name="save">SAVE</string>
+    <string name="add_car">Add car</string>
 
     <string-array name="event_types">
         <item>Mercury</item>
