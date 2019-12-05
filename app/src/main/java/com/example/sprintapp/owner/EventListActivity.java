@@ -35,7 +35,7 @@ public class EventListActivity extends AppCompatActivity {
         onNavBarClick();
         Intent incomingIntent = getIntent();
         final String date = incomingIntent.getStringExtra("date");
-        setTitle(date);
+        setTitle("Schedule:  " +date);
 
         getEventsForDate(date);
     }

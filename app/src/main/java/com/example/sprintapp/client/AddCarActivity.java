@@ -35,40 +35,55 @@ public class AddCarActivity extends AppCompatActivity {
 
         onNavBarClick();
 
-//        Button registerButton = findViewById(R.id.register_button);
-//        registerButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//               addCar();
-//            }
-//        });
+        Button registerButton = findViewById(R.id.save_button);
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addCar();
+            }
+        });
     }
 
-//    public void addCar() {
-//        final EditText brandField = findViewById(R.id.brand);
-//        String brand = brandField.getText().toString();
-//
-//
-//        Map<String, Object> car = new HashMap<>();
-//        car.put("clientName", brand);
-//
-//        db.collection("cars").document()
-//                .set(car)
-//                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void aVoid) {
-//                        finish();
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        finish();
-//                        showMessage(R.string.something_went_wrong);
-//                    }
-//                });
-//
-//    }
+    public void addCar() {
+        final EditText brandField = findViewById(R.id.brand);
+        String brand = brandField.getText().toString();
+
+        final EditText modelField = findViewById(R.id.model);
+        String model = modelField.getText().toString();
+
+        final EditText productionYearField = findViewById(R.id.production_year);
+        String productionYear = productionYearField.getText().toString();
+
+        final EditText fuelTypeField = findViewById(R.id.fuel_type);
+        String fuelType = fuelTypeField.getText().toString();
+
+        final EditText registrationNumberField = findViewById(R.id.registration_number);
+        String registrationNumber = registrationNumberField.getText().toString();
+
+        Map<String, Object> car = new HashMap<>();
+        car.put("brand",brand);
+        car.put("model",model);
+        car.put("production_year",productionYear);
+        car.put("fuel_type",fuelType);
+        car.put("registration_number",registrationNumber);
+
+        db.collection("cars").document()
+                .set(car)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        finish();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        finish();
+                        showMessage(R.string.something_went_wrong);
+                    }
+                });
+
+    }
 
     protected void onNavBarClick() {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);

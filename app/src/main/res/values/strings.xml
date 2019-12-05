@@ -22,16 +22,15 @@
     <string name="insurance_policy">Insurance policy</string>
     <string name="save">SAVE</string>
     <string name="add_car">Add car</string>
+    <string name="main_title">Main Title</string>
+    <string name="phone_number">Phone number</string>
+    <string name="maintenance">Maintenance</string>
+    <string name="enter_name">Enter name</string>
 
     <string-array name="event_types">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+        <item>Annual Inspection</item>
+        <item>Oil Change</item>
+        <item>Diagnostics</item>
     </string-array>
 
 </resources>

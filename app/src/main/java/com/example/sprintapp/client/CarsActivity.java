@@ -8,12 +8,16 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.example.sprintapp.R;
 import com.example.sprintapp.owner.OwnerMainActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class CarsActivity extends AppCompatActivity {
+
+    ListView listView;
+    String car[] = {"Audi Q7", "BMW X5"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
