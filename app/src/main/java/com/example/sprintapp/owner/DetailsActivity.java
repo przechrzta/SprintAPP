@@ -1,14 +1,17 @@
 package com.example.sprintapp.owner;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.sprintapp.R;
+import com.example.sprintapp.shared.DateHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.Date;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -35,6 +38,9 @@ public class DetailsActivity extends AppCompatActivity {
 
                     case R.id.today:
                         Intent intent1 = new Intent(getApplicationContext(), EventListActivity.class);
+                        String date = DateHelper.format(new Date());
+                        intent1.putExtra("date", date);
+
                         startActivity(intent1);
                         return true;
 

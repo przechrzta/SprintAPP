@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sprintapp.R;
+import com.example.sprintapp.shared.DateHelper;
 import com.example.sprintapp.shared.Event;
 import com.example.sprintapp.shared.EventListAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,6 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -64,7 +66,7 @@ public class EventListActivity extends AppCompatActivity {
     }
 
     protected void onNavBarClick(){
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -76,7 +78,10 @@ public class EventListActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.today:
-                        Intent intent1= new Intent(getApplicationContext(), EventListActivity.class);
+                        Intent intent1 = new Intent(getApplicationContext(), EventListActivity.class);
+                        String date = DateHelper.format(new Date());
+                        intent1.putExtra("date", date);
+
                         startActivity(intent1);
                         return true;
 
