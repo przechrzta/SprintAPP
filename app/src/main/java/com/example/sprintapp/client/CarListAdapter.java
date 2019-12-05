@@ -4,24 +4,20 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sprintapp.R;
-import com.example.sprintapp.shared.EventListAdapter;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
 public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.CarViewHolder> {
 
-    private List<car> cars;
+    private List<Car> cars;
 
-    public CarListAdapter(List<car> cars){
+    public CarListAdapter(List<Car> cars) {
         this.cars = cars;
     }
 
@@ -33,8 +29,9 @@ public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.CarViewH
         return new CarViewHolder(v, parent.getContext());
     }
 
+    @Override
     public void onBindViewHolder(final CarViewHolder holder, int position){
-        final car car = cars.get(position);
+        final Car car = cars.get(position);
 
         holder.carBrandTextView.setText(car.getCarBrand());
         holder.carModelTextView.setText(car.getCarModel());

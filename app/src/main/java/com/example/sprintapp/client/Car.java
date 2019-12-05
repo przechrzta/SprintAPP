@@ -1,6 +1,7 @@
 package com.example.sprintapp.client;
 
-public class car {
+
+public class Car {
 
     private String carBrand;
     private String carModel;
@@ -9,11 +10,11 @@ public class car {
     private String carRegistrationNumber;
 
 
-    public car(){
+    public Car() {
         //for serialization
     }
 
-    public car(String carBrand, String carModel, String carProductionYear, String fuelType, String carRegistrationNumber){
+    public Car(String carBrand, String carModel, String carProductionYear, String fuelType, String carRegistrationNumber) {
         this.carBrand = carBrand;
         this.carModel = carModel;
         this.carProductionYear = carProductionYear;
