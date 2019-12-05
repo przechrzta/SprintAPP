@@ -30,7 +30,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/brand"
+                    android:id="@+id/carBrand"
                     android:hint="@string/brand"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/model"
+                    android:id="@+id/carModel"
                     android:inputType="textPersonName"
                     android:hint="@string/model"
                     android:layout_width="match_parent"
@@ -62,7 +62,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/production_year"
+                    android:id="@+id/carProductionYear"
                     android:hint="@string/prod_year"
                     android:inputType="textPersonName"
                     android:layout_width="match_parent"
@@ -78,7 +78,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fuel_type"
+                    android:id="@+id/fuelType"
                     android:hint="@string/fuel_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/registration_number"
+                    android:id="@+id/carRegistrationNumber"
                     android:hint="@string/registration_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

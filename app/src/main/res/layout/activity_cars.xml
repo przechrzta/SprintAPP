@@ -6,15 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/carsView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:divider="@android:color/holo_green_light"
-        android:dividerHeight="5dp" />
-
     <Button
         android:id="@+id/add_car_button"
         android:layout_width="wrap_content"
@@ -27,6 +18,15 @@
         android:text="@string/add_car"
         android:textColor="@color/white"
         app:srcCompat="@drawable/baseline_add_circle_white_48dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/carsView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:divider="@android:color/holo_green_light"
+        android:dividerHeight="5dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

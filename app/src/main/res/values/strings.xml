@@ -32,6 +32,7 @@
     <string name="register">REGISTER</string>
     <string name="brand_and_model">brand and model</string>
     <string name="no_phone_permission">Brak uprawnień aplikacji do dzwonienia.</string>
+    <string name="set_days_availability">Set days availability</string>
 
     <string-array name="event_types">
         <item>Annual Inspection</item>

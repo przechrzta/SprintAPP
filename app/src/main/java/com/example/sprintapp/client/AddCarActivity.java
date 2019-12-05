@@ -45,19 +45,19 @@ public class AddCarActivity extends AppCompatActivity {
     }
 
     public void addCar() {
-        final EditText brandField = findViewById(R.id.brand);
+        final EditText brandField = findViewById(R.id.carBrand);
         String brand = brandField.getText().toString();
 
-        final EditText modelField = findViewById(R.id.model);
+        final EditText modelField = findViewById(R.id.carModel);
         String model = modelField.getText().toString();
 
-        final EditText productionYearField = findViewById(R.id.production_year);
+        final EditText productionYearField = findViewById(R.id.carProductionYear);
         String productionYear = productionYearField.getText().toString();
 
-        final EditText fuelTypeField = findViewById(R.id.fuel_type);
+        final EditText fuelTypeField = findViewById(R.id.fuelType);
         String fuelType = fuelTypeField.getText().toString();
 
-        final EditText registrationNumberField = findViewById(R.id.registration_number);
+        final EditText registrationNumberField = findViewById(R.id.carRegistrationNumber);
         String registrationNumber = registrationNumberField.getText().toString();
 
         Map<String, Object> car = new HashMap<>();
