@@ -40,6 +40,4 @@
         app:menu="@menu/nav_bar_client" />
 
 
-
-
 </RelativeLayout>

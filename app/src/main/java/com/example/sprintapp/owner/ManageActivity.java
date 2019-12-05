@@ -20,6 +20,8 @@ public class ManageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage);
 
+        setTitle("Set days availability");
+
         onNavBarClick();
     }
 

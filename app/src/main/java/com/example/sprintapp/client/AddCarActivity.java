@@ -60,12 +60,7 @@ public class AddCarActivity extends AppCompatActivity {
         final EditText registrationNumberField = findViewById(R.id.carRegistrationNumber);
         String registrationNumber = registrationNumberField.getText().toString();
 
-        Map<String, Object> car = new HashMap<>();
-        car.put("brand",brand);
-        car.put("model",model);
-        car.put("production_year",productionYear);
-        car.put("fuel_type",fuelType);
-        car.put("registration_number",registrationNumber);
+        Car car = new Car(brand, model, productionYear, fuelType, registrationNumber);
 
         db.collection("cars").document()
                 .set(car)

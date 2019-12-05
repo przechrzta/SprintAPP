@@ -33,6 +33,12 @@
     <string name="brand_and_model">brand and model</string>
     <string name="no_phone_permission">Brak uprawnień aplikacji do dzwonienia.</string>
     <string name="set_days_availability">Set days availability</string>
+    <string name="set_closed">SET CLOSED</string>
+    <string name="set_open">SET OPEN</string>
+    <string name="pick_a_day_to_set_its_availability">Pick a day to set its availability</string>
+    <string name="to">To</string>
+    <string name="from">From</string>
+    <string name="save_all_changes">SAVE ALL CHANGES</string>
 
     <string-array name="event_types">
         <item>Annual Inspection</item>
